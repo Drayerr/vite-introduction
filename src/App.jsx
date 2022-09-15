@@ -9,8 +9,8 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUrl: '',
-      name: 'Drayerr',
+      avatarUrl: 'https://github.com/otonii.png',
+      name: 'Otonii',
       role: 'CTO @ Rocketseat'
     },
     content: [
@@ -23,7 +23,7 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl: '',
+      avatarUrl: 'https://github.com/drayerr.png',
       name: 'Drayerr',
       role: 'CTO @ Rocketseat'
     },
