@@ -5,6 +5,37 @@ import styles from "./App.module.css"
 import "./global.css"
 import { Sidebar } from "./components/Sidebar"
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: '',
+      name: 'Drayerr',
+      role: 'CTO @ Rocketseat'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galera' },
+      { type: 'paragraph', content: 'Acabei de substituir meu portifolio' },
+      { type: 'link', content: 'jane.design/doctor.care' }
+    ],
+    publishedAt: new Date('2022-05-03 20:00:00')
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: '',
+      name: 'Drayerr',
+      role: 'CTO @ Rocketseat'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galera' },
+      { type: 'paragraph', content: 'Acabei de substituir meu portifolio' },
+      { type: 'link', content: 'jane.design/doctor.care' }
+    ],
+    publishedAt: new Date('2022-05-03 20:00:00')
+  }
+]
+
 export function App() {
   return (
     <div>
@@ -13,14 +44,14 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post
-            author="Gabriel"
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam amet labore dolores quod suscipit earum assumenda unde maiores eligendi id. Fugiat ratione, suscipit corporis voluptates blanditiis eaque harum omnis dolorum."
-          />
-          <Post
-            author="Gabriel but is an impostor"
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aliquid omnis qui eos dolore! Ratione modi sed nam illo odit rerum ipsa reiciendis aliquid, dignissimos esse consequatur quisquam hic facilis."
-          />
+          {posts.map(post => {
+            return (
+              <Post key={post.id}
+                author={post.author.name}
+                content={post.content}
+              />
+            )
+          })}
         </main>
       </div>
     </div>
